@@ -1,7 +1,7 @@
 # Oman Next-Generation Sequencing & Bioinformatics Training
 
 ## Course overview
-Understanding pathogen genomes, how they evolve and which genes are essential for their ability to cause disease, is a key part of the battle to reduce the global disease burden.
+This course will provide training in laboratory and bioinformatics protocols for pathogen genomics, with a focus on SARS-CoV-2.
 
 ## Instructors
 - Darrell Dinwiddie
