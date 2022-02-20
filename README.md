@@ -27,5 +27,7 @@ Understanding pathogen genomes, how they evolve and which genes are essential fo
 
 ## Bioinformatics Course Manual
 **Virtual Machine Setup Guide**
+- [Manual PDF version](manuals/VM_Setup_Guide.pdf)
 
 **Module 1 - Intro to the command line**
+
