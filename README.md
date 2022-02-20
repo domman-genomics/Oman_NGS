@@ -26,4 +26,5 @@ Understanding pathogen genomes, how they evolve and which genes are essential fo
 - Week 14 : Data dissemination to public/private data repositories (Domman)
 
 ## Bioinformatics Course Manual
+**Virtual Machine Setup Guide**
 **Module 1 - Intro to the command line**
