@@ -24,3 +24,6 @@ Understanding pathogen genomes, how they evolve and which genes are essential fo
 - Week 12 : Genomic epidemiology and Nextstrain pipeline (Domman)
 - Week 13 : NGS troubleshooting, common mistakes & solutions (Dinwiddie)
 - Week 14 : Data dissemination to public/private data repositories (Domman)
+
+## Bioinformatics Course Manual
+**Module 1 - Intro to the command line**
