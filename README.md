@@ -1,7 +1,7 @@
 # Oman Next-Generation Sequencing & Bioinformatics Training
 
 ## Course overview
-Understanding pathogen genomes, how they evolve and which genes are essential for their ability to cause disease, is a key part of the battle to reduce the global disease burden.
+This course will provide training in laboratory and bioinformatics protocols for pathogen genomics, with a focus on SARS-CoV-2.
 
 ## Instructors
 - Darrell Dinwiddie
@@ -11,7 +11,8 @@ Understanding pathogen genomes, how they evolve and which genes are essential fo
 ### Overview 
 
 - Week 1 : Introduction to Next-Generation Sequencing (Dinwiddie)
-  - [PDF version] (lectures/1-Introduction to Next Generation Sequencing.pdf)  
+  - [PDF version](lectures/1_Introduction_to_Next_Gen_Sequencing.pdf) 
+ 
 - Week 2 : Good Laboratory Practices for NGS Processes (Dinwiddie)
 - Week 3 : Introduction to NGS Data and File types (Domman)
 - Week 4 : Introduction to working on the command line and virtual machine (Domman)
