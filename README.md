@@ -17,6 +17,7 @@ This course will provide training in laboratory and bioinformatics protocols for
   - [PDF Version](lectures/2_Good_Lab_Practices.pdf)
 
 - Week 3 : Introduction to NGS Data and File types (Domman)
+  - [Online Manual](manuals/01_Intro_to_NGS/module_Intro.md)
 - Week 4 : Introduction to working on the command line and virtual machine (Domman)
 - Week 5 : Overview of laboratory protocols for pathogen sequencing (Dinwiddie)
 - Week 6 : Short read mapping and calling variants against reference genome (Domman)
