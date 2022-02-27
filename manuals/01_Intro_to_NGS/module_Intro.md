@@ -32,7 +32,7 @@ Today we are going to take a look at some real data using SARS-CoV-2 genomes usi
 
 *******
 
- ## Nextclade <a name="exercise2"></a>
+## Nextclade <a name="exercise2"></a>
 
 Next, we will be using the online tool **Nextclade** to explore some basic analysis of SARS-CoV-2 genomes.
 
