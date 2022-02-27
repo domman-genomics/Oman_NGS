@@ -6,7 +6,7 @@
 2. [Looking at fasta files](#exercise1)
 3. [Nextclade](#exercise2)
 4. [Pangolin](#exercise3)
-
+4. [Exploring more data in Nextclade](#exercise4)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -123,3 +123,19 @@ What are the Pango lineage calls for the isolates?
 | Isolate 1     |       
 | Isolate 2      |     
 | Isolate 3      |  
+
+*******
+## Further exploring data in NextClade <a name="exercise4"></a>
+
+As an optional exercise if you have time:  
+1. Open a new Nextclade page : https://clades.nextstrain.org/
+2. Click on the `Load example` option to load a random set of genomes
+![](figures/module_1_Nextclade6.png)  
+
+3. Take a few moments to look over how all these different genomes look both in terms of quality and the differences in mutations. Be sure to look at other regions other than the S gene.
+
+![](figures/module_1_Nextclade7.png)
+
+***Questions***  
+1. Do some genomes have large gaps or many gaps? What might be the reason for this?
+2. What might be some of the impacts of having lots of missing data (ie many Ns)?

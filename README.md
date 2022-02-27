@@ -8,11 +8,11 @@ This course will provide training in laboratory and bioinformatics protocols for
 - Daryl Domman
 
 ## Timetable - all times local Oman time (GMT+4)
-### Overview 
+### Overview
 
 - Week 1 : Introduction to Next-Generation Sequencing (Dinwiddie)
-  - [PDF version](lectures/1_Introduction_to_Next_Gen_Sequencing.pdf) 
- 
+  - [PDF version](lectures/1_Introduction_to_Next_Gen_Sequencing.pdf)
+
 - Week 2 : Good Laboratory Practices for NGS Processes (Dinwiddie)
   - [PDF Version](lectures/2_Good_Lab_Practices.pdf)
 
@@ -34,5 +34,5 @@ This course will provide training in laboratory and bioinformatics protocols for
 **Virtual Machine Setup Guide**
 - [Manual PDF version](manuals/VM_Setup_Guide.pdf)
 
-**Module 1 - Intro to the command line**
-
+**Module 1 - Intro to NGS data**
+  - [Online Manual](manuals/01_Intro_to_NGS/module_Intro.md)
