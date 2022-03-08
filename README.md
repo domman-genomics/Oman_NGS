@@ -39,5 +39,6 @@ This course will provide training in laboratory and bioinformatics protocols for
 **Module 1 - Intro to NGS data**
   - [Online Manual](manuals/01_Intro_to_NGS/module_Intro.md)
   - [Lecture Slides](lectures/3_Intro_to_NGS_Data.pdf)
+ 
 **Module 2 - Intro to Command Line**
 - [Online Manual](manuals/02_Command_Line/Command_Line_Intro.md)
