@@ -36,7 +36,7 @@ This course will provide training in laboratory and bioinformatics protocols for
 
 ## Bioinformatics Course Manual
 **Virtual Machine Setup Guide**
-- UPDATE COMING SOON
+- [VM Guide](manuals/VM_Setup_Guide.pdf)
 
 **Module 1 - Intro to NGS data**
   - [Online Manual](manuals/01_Intro_to_NGS/module_Intro.md)
