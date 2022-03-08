@@ -20,6 +20,7 @@ This course will provide training in laboratory and bioinformatics protocols for
   - [Online Manual](manuals/01_Intro_to_NGS/module_Intro.md)
   - [Lecture Slides](lectures/3_Intro_to_NGS_Data.pdf)
 - Week 4 : Introduction to working on the command line and virtual machine (Domman)
+- [Online Manual](manuals/02_Command_Line/Command_Line_Intro.md)
 - Week 5 : Overview of laboratory protocols for pathogen sequencing (Dinwiddie)
 - Week 6 : Short read mapping and calling variants against reference genome (Domman)
 - Week 7 : Illumina based SARS-CoV-2 genome sequencing protocols (Dinwiddie)
