@@ -23,7 +23,8 @@ This course will provide training in laboratory and bioinformatics protocols for
   - [Online Manual](manuals/02_Command_Line/Command_Line_Intro.md)
   - [Lecture Slides](lectures/4_Command_line_and_VM.pdf)
 
-- Week 5 : Overview of laboratory protocols for pathogen sequencing (Dinwiddie)
+- Week 5 : Illumina Library Prep and Sequencing (Dinwiddie)
+  - [Lecture Slides](lectures/5_Illumina_Library_Prep_and_Sequencing.pdf)
 - Week 6 : Short read mapping and calling variants against reference genome (Domman)
 - Week 7 : Illumina based SARS-CoV-2 genome sequencing protocols (Dinwiddie)
 - Week 8 : Genome assemblies (Domman)
