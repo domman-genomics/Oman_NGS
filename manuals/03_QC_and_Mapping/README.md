@@ -3,10 +3,11 @@
 
 ## Table of contents
 1. [Introduction & Aims](#introduction)
-2. [Looking at fasta files](#exercise1)
-3. [Nextclade](#exercise2)
-4. [Pangolin](#exercise3)
-4. [Exploring more data in Nextclade](#exercise4)
+2. [Using conda to download tools](#conda)
+3. [Run FASTQC](#exercise1)
+4. [Nextclade](#exercise2)
+5. [Pangolin](#exercise3)
+6. [Exploring more data in Nextclade](#exercise4)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -22,6 +23,10 @@ If you list the contents of this directory `ll` it should appear like the follow
 We are working with two samples that have been sequenced with Illumina via paired-end sequencing. Therefore, each sample has a forward and reverse read. The forward read is usually denoted by  `SAMPLE-NAME_1.fastq.gz` and the reverse is usually denoted by `SAMPLE-NAME_2.fastq.gz`
 
  [↥ **Back to top**](#top)
+
+ ******
+## Using `conda` to install and download tools <a name="conda"></a>
+
 
  ******
 ## Run FASTQC <a name="exercise1"></a>
