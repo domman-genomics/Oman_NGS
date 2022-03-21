@@ -3,10 +3,9 @@
 
 ## Table of contents
 1. [Introduction & Aims](#introduction)
-2. [Looking at fasta files](#exercise1)
-3. [Nextclade](#exercise2)
-4. [Pangolin](#exercise3)
-4. [Exploring more data in Nextclade](#exercise4)
+2. [Run fastQC](#exercise1)
+3. [Trimming reads](#exercise2)
+4. [Download Reference Genome](#exercise3)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -100,24 +99,110 @@ Another important plot is to look at the mean GC content of the reads. This plot
 There are other useful plots and analyses that are in the  fastQC / multiQC report. I encourage you to look at these and explore the data!
 
 
+**`Control+c` will allow you to close firefox at the terminal when done viewing the report**
+
 [↥ **Back to top**](#top)
 *******
 
-## Trimming reads <a name="exercise2"></a>
+## Trimming reads with trim_galore <a name="exercise2"></a>
 
-Next, we will be using the  tool **fastp** to trim (ie remove) poor quality data and contaminating adapter sequences
+Next, we will be using the  tool **trim_galore** to trim (ie remove) poor quality data and contaminating adapter sequences. `trim_galore` takes about 10 minutes to finish per dataset.
+
+`Trim Galore` is a tool that runs the program `cutadapt` and `fastQC`. You can find more information about these tools here:
+1. `Trim Galore` : https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md
+2. `cutadapt`: https://cutadapt.readthedocs.io/en/stable/
+
+First we will use `conda` to install the `trim_galore` program. `conda` is a package management tool that allows one to create different "environments" and takes the pain out of downloading software. I have already installed `conda` but you can find the details how I did this here : https://docs.conda.io/en/latest/miniconda.html
 
 ```bash
-fastp -i TBsample1_1.fastq.gz -I TBsample1_2.fastq.gz -o TBsample1_1_trim.fastq.gz -O TBsample1_2_trim.fastq.gz
+conda create --yes -n qc -c bioconda -c conda-forge python=3.8 trim-galore fastqc multiqc
 ```
+This creates a new environment called 'qc' and installs the programs `trim_galore` , `fastqc`, `multiqc` and `python3.8`
 
-Now run **fastp** for the second sample:
-```bash
-fastp -i TBsample2_1.fastq.gz -I TBsample2_2.fastq.gz -o TBsample2_1_trim.fastq.gz -O TBsample2_2_trim.fastq.gz
-```
+You can activate the new environment with the command:
 
-Now we need to run **FASTQC** on the trimmed fastq files:
 ```bash
-fastqc *trim.fastq.gz
+conda activate qc
 ```
-Here we utilized a "shortcut" by using the `*trim.fastq.gz` which allows us to match all files that have the ending `trim.fastq.gz`, instead of us having to type each file individually.  
+![](figures/TB_fig10.png)
+
+Now we are able to use `trim_galore` to process the fastq file for each of the TB samples.
+
+**Run trim_galore on Sample 1**
+```bash
+trim_galore --cores 4 --paired --fastqc TBsample1_1.fastq.gz TBsample1_2.fastq.gz
+```
+This command has several options that we used:  
+`--cores 4` : use 4 CPUs (the max on our VMs) so that it runs faster  
+`--paired` : let's the program know we have paired-end data  
+`--fastqc` : automatically runs `fastQC` when finished
+
+**!!! This step is going to take around 10 minutes to finish. While waiting please go to [Download Reference Genome](#exercise3) section.**
+
+When finished `trim_galore` produces the following files **per fastq file**:
+
+| File type | Description |
+| ------------- |:-------------:
+| `_val_1.fq.gz` or `_val_2.fq.gz`      | trimmed fastq file
+| _trimming_report.txt     | summary output of `trim_galore` command
+| _val_1_fastqc.zip      | data folder for output of fastqc compressed as zip file
+| _val_1_fastqc.html     | fastqc results from trimmed fastq that can be viewed in web browser
+
+
+### Now run `trim_galore` for the second sample:
+```bash
+trim_galore --cores 4 --paired --fastqc TBsample2_1.fastq.gz TBsample2_2.fastq.gz
+```
+**This will take around 10 minutes to complete.**  
+
+Use this time to look over the `fastQC` html files or the `multiQC` html files we have already generated and see if there are any questions.
+
+Once the command above has finished use `ls` to see all the files we have generated:
+![](figures/TB_fig16.png)
+
+At this point we should have `fastQC` data for our original fastq files as well as the trimmed reads.
+
+### Run multiqc to collate all fastQC reports for original and trimmed reads
+```bash
+multiqc -f .
+```
+`-f` : overwrites the previous `multiqc` report
+
+### Open new report with firefox
+```bash
+firefox multiqc_report.html
+```
+**Remember `Control+c` will allow you to close firefox at the terminal when done viewing**
+
+### Comparing the dataset
+Look through the new multiQC report to see the difference trimming has made (particularly for TBSample2 data)
+![](figures/TB_fig17.png)
+
+
+##### *Questions*
+1. Look at the Sequence Count table. Are there less reads in the trimmed datasets compared to the original data?
+2. Was a large percentage of reads removed or trimmed overall?
+3. How did trimming effect the mean sequence quality? Does the data look to be higher quality now?
+
+
+[↥ **Back to top**](#top)
+## Download TB reference genome <a name="exercise3"></a>
+
+The reference genome Mycobacterium tuberculosis H37Rv can be found here :
+https://www.ncbi.nlm.nih.gov/assembly/GCF_000195955.2
+
+Follow the steps below for downloading the GenBank genome file:
+### Step 1   
+![](figures/TB_fig11.png)  
+### Step 2
+![](figures/TB_fig12.png)  
+### Step 3
+![](figures/TB_fig13.png)
+### Step 4
+![](figures/TB_fig14.png)
+### Step 5
+![](figures/TB_fig15.png)
+
+We will be using this reference genome file for our upcoming mapping module.
+
+[↥ **Back to top**](#top)
