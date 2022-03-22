@@ -120,11 +120,11 @@ There are other useful plots and analyses that are in the  fastQC / multiQC repo
 Next, we will be using the  tool **trim_galore** to trim (ie remove) poor quality data and contaminating adapter sequences. `trim_galore` takes about 10 minutes to finish per dataset.
 
 `Trim Galore` is a tool that runs the program `cutadapt` and `fastQC`. You can find more information about these tools here:
-1. `Trim Galore` : https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md
-2. `cutadapt`: https://cutadapt.readthedocs.io/en/stable/
+1. `Trim Galore` : <https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md>
+2. `cutadapt`: <https://cutadapt.readthedocs.io/en/stable/>
 
 ### Using `conda` to install and download tools <a name="conda"></a>
-First we will use `conda` to install the `trim_galore` program. `conda` is a package management tool that allows one to create different "environments" and takes the pain out of downloading software. I have already installed `conda` but you can find the details how I did this here : https://docs.conda.io/en/latest/miniconda.html
+First we will use `conda` to install the `trim_galore` program. `conda` is a package management tool that allows one to create different "environments" and takes the pain out of downloading software. I have already installed `conda` but you can find the details how I did this here : <https://docs.conda.io/en/latest/miniconda.html>
 
 Please run:
 ```bash
@@ -202,7 +202,7 @@ Look through the new multiQC report to see the difference trimming has made (par
 ## Download TB reference genome <a name="exercise3"></a>
 
 The reference genome Mycobacterium tuberculosis H37Rv can be found here :
-https://www.ncbi.nlm.nih.gov/nuccore/AL123456.3/
+<https://www.ncbi.nlm.nih.gov/nuccore/AL123456.3/>
 
 Follow the steps below for downloading the GenBank genome file:
 ### Step 1   
