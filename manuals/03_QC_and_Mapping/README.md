@@ -202,7 +202,7 @@ Look through the new multiQC report to see the difference trimming has made (par
 ## Download TB reference genome <a name="exercise3"></a>
 
 The reference genome Mycobacterium tuberculosis H37Rv can be found here :
-https://www.ncbi.nlm.nih.gov/assembly/GCF_000195955.2
+https://www.ncbi.nlm.nih.gov/nuccore/AL123456.3/
 
 Follow the steps below for downloading the GenBank genome file:
 ### Step 1   
