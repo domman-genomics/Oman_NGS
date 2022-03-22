@@ -9,7 +9,14 @@
 
 ## 1. Introduction <a name="introduction"></a>
 
-The goal of this exercise is look at basic QC data from Illumina sequencing reads and to use a trimming tool to remove adapter sequences and poor quality bases.
+The goal of this exercise is look at basic QC data from Illumina sequencing reads and to use a trimming tool to remove adapter sequences and poor quality bases. Our dataset are two *M. tuberculosis* samples that have been sequenced via Illumina paired-end. We will be using this data for this module and the next to focus on the basics of data QC and for mapping reads to a reference genome. 
+
+### We will
+
+- [X] Learn how to run `fastqc` on Illumina reads
+- [X] Use `multiqc` to combine and visualize multiple `fastqc` reports
+- [x] Learn how to create a new `conda` environment
+- [x] Use `trim_galore` to trim Illimina fastq data
 
 First move into the TB dataset folder:
 ```bash
@@ -21,6 +28,10 @@ If you list the contents of this directory `ll` it should appear like the follow
 We are working with two samples that have been sequenced with Illumina via paired-end sequencing. Therefore, each sample has a forward and reverse read. The forward read is usually denoted by  `SAMPLE-NAME_1.fastq.gz` and the reverse is usually denoted by `SAMPLE-NAME_2.fastq.gz`
 
  [↥ **Back to top**](#top)
+
+ ******
+## Using `conda` to install and download tools <a name="conda"></a>
+
 
  ******
 ## Run FASTQC <a name="exercise1"></a>
