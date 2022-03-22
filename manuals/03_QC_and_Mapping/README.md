@@ -9,7 +9,7 @@
 
 ## 1. Introduction <a name="introduction"></a>
 
-The goal of this exercise is look at basic QC data from Illumina sequencing reads and to use a trimming tool to remove adapter sequences and poor quality bases. Our dataset are two *M. tuberculosis* samples that have been sequenced via Illumina paired-end. We will be using this data for this module and the next to focus on the basics of data QC and for mapping reads to a reference genome. 
+The goal of this exercise is look at basic QC data from Illumina sequencing reads and to use a trimming tool to remove adapter sequences and poor quality bases. Our dataset are two *M. tuberculosis* samples that have been sequenced via Illumina paired-end. We will be using this data for this module and the next to focus on the basics of data QC and for mapping reads to a reference genome.
 
 ### We will
 
@@ -30,10 +30,7 @@ We are working with two samples that have been sequenced with Illumina via paire
  [↥ **Back to top**](#top)
 
  ******
-## Using `conda` to install and download tools <a name="conda"></a>
 
-
- ******
 ## Run FASTQC <a name="exercise1"></a>
 
 The program `fastqc` is widely used to assess the quality metrics of Illumina sequencing data. Here we will be running `fastqc` on both of the TB samples before and after we perform read and adapter trimming.
@@ -115,6 +112,9 @@ There are other useful plots and analyses that are in the  fastQC / multiQC repo
 [↥ **Back to top**](#top)
 *******
 
+
+
+ ******
 ## Trimming reads with trim_galore <a name="exercise2"></a>
 
 Next, we will be using the  tool **trim_galore** to trim (ie remove) poor quality data and contaminating adapter sequences. `trim_galore` takes about 10 minutes to finish per dataset.
@@ -123,14 +123,16 @@ Next, we will be using the  tool **trim_galore** to trim (ie remove) poor qualit
 1. `Trim Galore` : https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md
 2. `cutadapt`: https://cutadapt.readthedocs.io/en/stable/
 
+### Using `conda` to install and download tools <a name="conda"></a>
 First we will use `conda` to install the `trim_galore` program. `conda` is a package management tool that allows one to create different "environments" and takes the pain out of downloading software. I have already installed `conda` but you can find the details how I did this here : https://docs.conda.io/en/latest/miniconda.html
 
+Please run:
 ```bash
 conda create --yes -n qc -c bioconda -c conda-forge python=3.8 trim-galore fastqc multiqc
 ```
 This creates a new environment called 'qc' and installs the programs `trim_galore` , `fastqc`, `multiqc` and `python3.8`
 
-You can activate the new environment with the command:
+You activate the new environment with the command:
 
 ```bash
 conda activate qc
