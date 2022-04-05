@@ -202,7 +202,7 @@ One particular mutation in rpoB that is known to confer resistance to rifampin i
 
 Take a look at this paper here: https://academic.oup.com/jid/article/182/6/1788/916586?login=false
 
-What gene and what position are typically effected for isoniazid resistance with TB?
+What gene and what mutation with that gene are typically effected for isoniazid resistance with TB?
 
 Use `grep` to search for this gene within the `TBsample1_snippy/snps.tab` and `TBsample2_snippy/snps.tab`
 
