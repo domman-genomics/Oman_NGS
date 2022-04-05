@@ -33,7 +33,7 @@ conda install -y -c conda-forge mamba
 ```
 `-y` : automatically proceeds with downloading packages  
 `-c conda-forge`: adds conda-forge channel
-`snippy perl-bioperl` at the end are the names of the packages we are downloading `mamba`
+`mamba` at the end are the names of the packages we are downloading `mamba`
 
 Now we are going to use `mamba` to install `snippy`
 ```bash
