@@ -35,26 +35,26 @@ conda install -y -c conda-forge mamba
 `-c conda-forge`: adds conda-forge channel
 `mamba` at the end are the names of the packages we are downloading `mamba`
 
+### If you previously installed the snippy environment please remove it here first:
+```bash
+conda remove --name snippy --all
+```
 Now we are going to use `mamba` to install `snippy`
 ```bash
-mamba create --name snippy -c conda-forge -c bioconda snippy==4.6 snpeff=5.0 bcftools=1.10
+mamba create --name snippy -c conda-forge -c bioconda snippy==4.6 snpeff==5.0 bcftools==1.10 vt==0.57721
 ```
-`mamba` is a faster alternative to `conda` that sometimes works a bit better for some installations. It works in exactly the same way as `conda`.
-`mamba create` : command that creates a new environments  
+`mamba` is a faster alternative to `conda` that sometimes works a bit better for some installations. It works in exactly the same way as `conda`.  
+
+`mamba create` : command that creates a new environment  
 `-c conda-forge`: adds conda-forge channel  
 `-c bioconda`: adds bioconda channel  
-`snippy==4.6 snpeff=5.0 bcftools=1.10` : installs specific packages and versions
+`snippy==4.6 snpeff=5.0 bcftools=1.10 vt==0.57721` : installs specific packages and versions
 
-Once it has finished installing you can now activate the envoronment by typing:
+Once it has finished installing you can now activate the environment by typing:
 ```bash
 conda activate snippy
 ```
 
-There are some weird errors going on with the `snippy` install so please do the following commands that will correct them:
-```bash
-mamba remove bcftools
-mamba install -c bioconda -c conda-forge snippy=4.6.0 bcftools=1.10
-```
 This should do the trick, and everything should work now.
 ![](figures/map_fig1.png)
 
@@ -75,7 +75,7 @@ snippy --cpus 4 --outdir TBsample1_snippy --ref Mtb_H37Rv.gb --R1 TBsample1_1_va
 ```
 `--cpus 4` : run using 4 CPUs (the max number we have on the VMs). Default is 8.  
 `--outdir` : name the output directory  
-`--ref` : reference genome file in GenBank or fasta information  
+`--ref` : reference genome file in GenBank or fasta format  
 `--R1` : Forward read files (remember we are using the trim_galore output files)  
 `--R2` : Reverse read files (remember we are using the trim_galore output files)  
 `--subsample` : percentage to subsambple reads. In this case we look at 0.5 (half) to speed things up. You don't have to do this in your real analyses.  

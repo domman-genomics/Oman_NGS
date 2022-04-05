@@ -26,7 +26,7 @@ This course will provide training in laboratory and bioinformatics protocols for
   - [Lecture Slides](lectures/5_Illumina_Library_Prep_and_Sequencing.pdf)
 - Week 6 : Illumina data QC and conda environments (Domman)
   - [Lecture Slides](lectures/6_Data_QC.pdf)
-  - [Online Manual](manuals/03_QC_/README.md)
+  - [Online Manual](manuals/03_QC_and_Mapping/README.md)
 - Week 7 : Nanopore based SARS-CoV-2 genome sequencing protocols (Dinwiddie)
   - [Lecture Slides](lectures/7_ONT_Library_Prep.pdf)
 - Week 8 : Mapping (Domman)
