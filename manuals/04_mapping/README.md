@@ -64,7 +64,7 @@ snippy -h
 ```
 ![](figures/map_fig2.png)
 
-## Run `snippy` to map reads to reference and call variants <a name="exercise2"></a>
+## 2. Run `snippy` to map reads to reference and call variants <a name="exercise2"></a>
 
 We are going to use `snippy` which is a very popular pipeline for mapping and calling variants for bacterial genomes.  
 You can learn more about the pipeline here : https://github.com/tseemann/snippy  
@@ -179,7 +179,7 @@ ins  | Insertion | ATT => AGTT
 del  | Deletion | ACGG => ACG
 complex | Combination of snp/mnp | ATTC => GTTA
 
-### Looking for resistance mutations <a name="exercise3"></a>
+# 3. Looking for resistance mutations <a name="exercise3"></a>
 
 Let's look for a few well known resistance mutations in these datasets.
 
