@@ -30,7 +30,7 @@ This course will provide training in laboratory and bioinformatics protocols for
 - Week 7 : Nanopore based SARS-CoV-2 genome sequencing protocols (Dinwiddie)
   - [Lecture Slides](lectures/7_ONT_Library_Prep.pdf)
 - Week 8 : Mapping (Domman)
-  - [Online Manual](manuals/04_mapping_/README.md)
+  - [Online Manual](manuals/04_mapping/README.md)
 - Week 9 : Illumina based SARS-CoV-2 genome sequencing protocols (Dinwiddie)
 - Week 10 : How to create and interpret phylogenies (Domman)
 - Week 11 : Comparison of Sequencing Technologies for Pathogen Sequencing (Dinwiddie)
