@@ -198,7 +198,7 @@ Does one sample have more mutations than the other?
 
 One particular mutation in rpoB that is known to confer resistance to rifampin is the S640L mutation. Does one of our samples have this mutation?
 
-### Isoniazid reseistance
+### Isoniazid resistance
 
 Take a look at this paper here: https://academic.oup.com/jid/article/182/6/1788/916586?login=false
 
