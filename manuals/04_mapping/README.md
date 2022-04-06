@@ -88,7 +88,10 @@ ll TBsample1_snippy
 ```
 ![](figures/map_fig3.png)
 
-### Now modify the command to run date for TBsample2. How do you need to change the above `snippy` command so that you use that data? Set `--outdir TBsample2_snippy`. What read data (`--R1` and `--R2`) do we need to add?
+### Now modify the command to run date for TBsample2.  
+How do you need to change the above `snippy` command so that you use that data?  
+
+Set `--outdir TBsample2_snippy`. What read data (`--R1` and `--R2`) do we need to add?
 
 After you have run both `snippy` commands you should see the following files is you run:
 ```bash
