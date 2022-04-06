@@ -78,7 +78,7 @@ snippy --cpus 4 --outdir TBsample1_snippy --ref Mtb_H37Rv.gb --R1 TBsample1_1_va
 `--ref` : reference genome file in GenBank or fasta format  
 `--R1` : Forward read files (remember we are using the trim_galore output files)  
 `--R2` : Reverse read files (remember we are using the trim_galore output files)  
-`--subsample` : percentage to subsambple reads. In this case we look at 0.5 (half) to speed things up. You don't have to do this in your real analyses.  
+`--subsample` : percentage to subsample reads. In this case we look at 0.5 (half) to speed things up. (You don't have to do this with your actual data).
 
 `snippy` will take a few minutes to complete. There will be quite a bit of output on the terminal -- and that is OKAY!
 
@@ -184,14 +184,14 @@ complex | Combination of snp/mnp | ATTC => GTTA
 Let's look for a few well known resistance mutations in these datasets.
 
 #### Rifampin reseistance
-One of the main genes that contains that confers resistance to rifampin is rpoB. Let's take a look to see if we have any mutations in rpoB within our two samples.
+A primary drug for treating TB is rifampin. One of the main genes that has mutations that confers resistance to rifampin is rpoB. Let's take a look to see if we have any mutations in rpoB within our two samples.
 
 ```bash
 grep 'rpoB' TBsample1_snippy/snps.tab
 grep 'rpoB' TBsample2_snippy/snps.tab
 ```
-`grep` is the command to search within a files  
-Here, `ropB` after grep is the search terms and then we follow it by the file we wish to search.
+`grep` is the command to search within a file  
+Here, `rpoB` after grep is the search terms and then we follow it by the file we wish to search.
 
 
 Does one sample have more mutations than the other?
@@ -202,7 +202,7 @@ One particular mutation in rpoB that is known to confer resistance to rifampin i
 
 Take a look at this paper here: https://academic.oup.com/jid/article/182/6/1788/916586?login=false
 
-What gene and what mutation with that gene are typically effected for isoniazid resistance with TB?
+What gene and what mutation within that gene are typical for isoniazid resistance with TB?
 
 Use `grep` to search for this gene within the `TBsample1_snippy/snps.tab` and `TBsample2_snippy/snps.tab`
 
