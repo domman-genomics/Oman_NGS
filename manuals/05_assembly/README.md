@@ -137,7 +137,7 @@ firefox quast_results/latest/report.html
 #### First we need to create a new environment and install `prokka`:
 ```bash
 mamba create -n annotate -c conda-forge -c bioconda -c defaults prokka   
-coda activate annotate
+conda activate annotate
 ```
 
 #### Now run `prokka`
