@@ -80,7 +80,7 @@ conda activate quast
 
 
 
-Check snippy is installed properly and to get an idea of how to run the program:
+Check quast is installed properly and get an idea of how to run the program:
 ```bash
 quast -h
 ```
@@ -120,6 +120,13 @@ There are a number of useful metrics reported by Quast on each assembly:
 
 
 ![](figures/assemb_2.png)
+
+#### You can also run quast using a reference genome which can give more insight into the differences between the assemblies:
+```bash
+quast -r reference.fa -g reference.gff -l skesa_TB1,skesa_TB2,spades_TB1,spades_TB2 skesa_TBsample1.fasta skesa_TBsample2.fasta spades_TBsample1_contigs.fa spades_TBsample2_contigs.fa
+
+firefox quast_results/latest/report.html
+```
 
 ## 2. Run `prokka` to annotate genomes <a name="exercise2"></a>
 
