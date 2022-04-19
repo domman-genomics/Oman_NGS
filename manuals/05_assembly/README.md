@@ -4,25 +4,60 @@
 ## Table of contents
 1. [Introduction & Aims](#introduction)
 2. [Run Quast](#exercise1)
-3. [Looking at SNPs](#exercise2)
+3. [Looking at genomes](#exercise2)
 4. [Commands for running assemblies](#exercise3)
 
 ## 1. Introduction <a name="introduction"></a>
 
-The goal of this exercise is to de novo assemble bacterial genomes uses `SKEASA` and `Spades`. Our dataset are two *M. tuberculosis* samples that have been sequenced via Illumina paired-end. We will be using the trimmed reads from the previous module as input for the mapping.
+The goal of this exercise is to de novo assemble bacterial genomes uses `SKESA` and `Spades`. Our dataset are two *M. tuberculosis* samples that have been sequenced via Illumina paired-end. We will be using the trimmed reads from the previous module as input for the assemby programs.
+
+You can find more information here:  
+
+`SKESA` : https://github.com/ncbi/SKESA  
+`Shovill` : https://github.com/tseemann/shovill
+
+As the actual assembly programs take quite a while to run, we will be working off of the results files.
 
 ### We will
 
+- [X] Use `git` to pull data from a github account
 - [X] Compare assembly methods using `quast`
 - [X] Use `prokka` to annotate genomes
 - [x] Learn the assembly commands for SKESA and Spades
 
+#### First we need to download the assembly datasets that I have run
+
+```bash
+cd Oman_modules
+git pull
+```
+![](figures/assemb_3.png)
+
+Check to see we now have an assembly folder:
+```bash
+ll
+```
+![](figures/assemb_4.png)
+
+#### Now move the `assemblies` folder to our `TB_module` folder:
+```bash
+mv assemblies/ ../TB_module/.
+cd ../TB_module
+ls
+```
+You should see the `assemblies` folder in now in the `TB_module` folder.
+
+![](figures/assemb_5.png)
+
+### We are now ready to use quast to compare the assemblies
 
 ## Compare assemblies using Quast <a name="exercise1"></a>
-First move into the TB dataset folder:
+First move into the TB dataset assemblies folder we just downloaded:
 ```bash
-cd TB_module
+cd assemblies
+
 ```
+
 
 #### We need to install `Quast` by creating a new conda environments
 
@@ -49,22 +84,48 @@ Check snippy is installed properly and to get an idea of how to run the program:
 ```bash
 quast -h
 ```
-
-#### Run quast on our assemblies:
-```bash
-quast -l skesa_TB1,skesa_TB2,spades_TB1,spades_TB2 skesa_TBsample1.fasta \
- skesa_TBsample2.fasta spades_TBsample1/contigs.fa spades_TBsample2/contigs.fa
-```
-
 This should do the trick, and everything should work now.
 ![](figures/assemb_1.png)
 
+#### Run quast on our assemblies:
 
+Quast usage is as follows:
+`quast [options] <contig files>`
+
+Contig files are the `.fasta` or `.fa` files produced by assembly programs   
+
+```bash
+quast -l skesa_TB1,skesa_TB2,spades_TB1,spades_TB2  skesa_TBsample1.fasta skesa_TBsample2.fasta spades_TBsample1_contigs.fa spades_TBsample2_contigs.fa
+```
+
+
+`-l` : you can rename what the assembly dataset is called here. We do this to make it easier when we are looking at the results instead of long names  
+
+##### Use firefox to look at the output files:
+```bash
+firefox quast_results/latest/report.html
+```
+
+There are a number of useful metrics reported by Quast on each assembly:
+1. Total number of contigs
+2. Largest contig
+3. Total length of the assembly
+4. N50 value : the length of the shortest contig for which longer and equal length contigs cover at least 50 % of the assembly
+
+#### Compare the SKESA versus Spades assemblies for TB1 and TB2 datasets.
+***Questions***
+1. For each dataset (TB1 and TB2), which assembler produces more contigs?
+2. For each dataset (TB1 and TB2), what is the size difference between the assemblies?
+3. Do you notice a trend between the assemblers?
 
 
 ![](figures/assemb_2.png)
 
 ## 2. Run `prokka` to annotate genomes <a name="exercise2"></a>
+
+`Prokka` is a very popular (probably the most) bacterial annotation tool. You can read more about it here : https://github.com/tseemann/prokka
+
+
 
 #### First we need to create a new environment and install `prokka`:
 ```bash
@@ -74,10 +135,63 @@ coda activate annotate
 
 #### Now run `prokka`
 ```bash
-prokka --cpus 4 --proteins Mtb_H37Rv.gb --outdir skesa_TB1 --prefix TB1_skesa skesa_TBsample1.fasta
+prokka --cpus 4 --proteins ../Mtb_H37Rv.gb --outdir skesa_TB1 --prefix TB1_skesa skesa_TBsample1.fasta
+prokka --cpus 4 --proteins ../Mtb_H37Rv.gb --outdir skesa_TB2 --prefix TB2_skesa skesa_TBsample2.fasta
 ```
 
-# 3. Commands for running bacterial genome assembly <a name="exercise3"></a>
+#### There are many output files produced by prokka:
+#### Output Files
+
+| Extension | Description |
+| --------- | ----------- |
+| .gff | This is the master annotation in GFF3 format, containing both sequences and annotations. It can be viewed directly in Artemis or IGV. |
+| .gbk | This is a standard Genbank file derived from the master .gff. If the input to prokka was a multi-FASTA, then this will be a multi-Genbank, with one record for each sequence. |
+| .fna | Nucleotide FASTA file of the input contig sequences. |
+| .faa | Protein FASTA file of the translated CDS sequences. |
+| .ffn | Nucleotide FASTA file of all the prediction transcripts (CDS, rRNA, tRNA, tmRNA, misc_RNA) |
+| .sqn | An ASN1 format "Sequin" file for submission to Genbank. It needs to be edited to set the correct taxonomy, authors, related publication etc. |
+| .fsa | Nucleotide FASTA file of the input contig sequences, used by "tbl2asn" to create the .sqn file. It is mostly the same as the .fna file, but with extra Sequin tags in the sequence description lines. |
+| .tbl | Feature Table file, used by "tbl2asn" to create the .sqn file. |
+| .err | Unacceptable annotations - the NCBI discrepancy report. |
+| .log | Contains all the output that Prokka produced during its run. This is a record of what settings you used, even if the --quiet option was enabled. |
+| .txt | Statistics relating to the annotated features found. |
+| .tsv | Tab-separated file of all features: locus_tag,ftype,len_bp,gene,EC_number,COG,product |
+
+The GenBank `.gbk` file is one of the main outputs that is usefull for downstream applications, as is the `.gff` file.
+
+
+## 3. Viewing assemblies in genome browser
+
+You can take an interactive look at your genomes by using one of several interactive genome browsers. My personal favorite is `artemis`, but another popular one is `IGV`.
+
+You can load your annotated genome for viewing in Artemis like so:
+```bash
+conda activate base
+art skesa_TB1/TB1_skesa.gff
+```
+When you first start this up an annoying box will appear telling you Artemis is complaining about something and that there are warnings. In this case hit the `NO` button.
+
+![](figures/assemb_6.png)
+
+You should now be on the main screen.
+
+A few things are helpful when browsing. Right click in the white area to the right on the bottom panel to bring up the following menu:
+![](figures/assemb_7.png)
+
+Click Show Gene Names and Show Products
+![](figures/assemb_8.png)
+
+A very useful tool is the navigation pane within Artemis.
+![](figures/assemb_9.png)
+
+For instance, if we wanted to find the `gyrB` gene you can search for it as follows:
+![](figures/assemb_10.png)
+
+
+A full in-depth review of Artemis is just not possible within our 90 minutes, but you can look at a module from a course that I have taught on for a numner of years for more background : https://github.com/domman-genomics/WWPG_2022/blob/main/manuals/module_artemis/module_artemis.md
+
+
+# 4. Commands for running bacterial genome assembly <a name="exercise3"></a>
 
 ## You do **not** need to run these commands! They are here for informational purposes.
 
