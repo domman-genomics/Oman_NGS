@@ -18,7 +18,7 @@ You can find more information here:
 
 - [X] Use `git` to pull data from a github account
 - [X] Use `tar` to uncompress files and folders
-- [X] 
+- [X]
 - [x]
 
 #### First we need to download the SARS-CoV-2 files:
@@ -67,18 +67,25 @@ To compress a folder use similar command:
 
 You should see the `barcode01` folder now.
 
-### Use the `tar` command to uncompress the other two barcode file
+#### Use the `tar` command to uncompress the other two barcode file
  After, you will have the following three barcode folders:
  ![](figures/sars-5.png)
 
-### We are now ready to use quast to compare the assemblies
 
-## Compare assemblies using Quast <a name="exercise1"></a>
-First move into the TB dataset assemblies folder we just downloaded:
+## Install the ARTIC Bioinformatics<a name="exercise1"></a>
+A very popular pipeline for processing SARS-CoV-2 nanopore sequencing data is ARTIC. They put out an SOP for running the pipeline back in 2020, and it is still quite useful to follow:
+
+https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html   
+
+It is always a good idea to keep `conda` and `mamba` up to date, so we will first run:
+
 ```bash
-cd assemblies
+conda update conda
+mamba update mamba
 
 ```
+We will follow the directions to install ARTIC from here:
+
 
 
 #### We need to install `Quast` by creating a new conda environments
