@@ -1,5 +1,3 @@
-# Bacterial genome assembly using Mycobacterium tuberculosis example dataset
-
 
 ## Table of contents
 1. [Introduction & Aims](#introduction)
@@ -13,39 +11,65 @@ In this module, we are going to work through how to generate SARS-CoV-2 consensu
 
 You can find more information here:  
 
-`ARTIC` : https://github.com/artic-network/fieldbioinformatics 
+`ARTIC` : https://github.com/artic-network/fieldbioinformatics
 
 
 ### We will
 
 - [X] Use `git` to pull data from a github account
-- [X] Compare assembly methods using `quast`
-- [X] Use `prokka` to annotate genomes
-- [x] Learn the assembly commands for SKESA and Spades
+- [X] Use `tar` to uncompress files and folders
+- [X] 
+- [x]
 
-#### First we need to download the assembly datasets that I have run
+#### First we need to download the SARS-CoV-2 files:
 
 ```bash
 cd Oman_modules
 git pull
 ```
-![](figures/assemb_3.png)
+![](figures/sars-1.png)
 
-Check to see we now have an assembly folder:
+Check to see we now have the `SARS_CoV-2 folder`:
 ```bash
 ll
 ```
-![](figures/assemb_4.png)
+![](figures/sars-2.png)
 
-#### Now move the `assemblies` folder to our `TB_module` folder:
+#### Now move into the `SARS_CoV-2` folder to use `tar` to uncompress the files:
 ```bash
-mv assemblies/ ../TB_module/.
-cd ../TB_module
-ls
+cd SARS_CoV-2
+ll
 ```
-You should see the `assemblies` folder in now in the `TB_module` folder.
+You will see that there are three barcode files that end in `.tar.gz`. This means these are folders that are gzipped (.gz) or compressed. We need to uncompress them for us to use them.   
+![](figures/sars-3.png)
 
-![](figures/assemb_5.png)
+#### Use `tar` to uncompress:
+
+```
+tar xzvf barcode01.tar.gz
+ll
+```
+`tar [options] [compressed-file] [file or directory to be compressed]` :  
+`-x` : Extract (decompress)  
+`-c` : compress  
+`-z` : zip, tells tar command to create or uncompress tar file using gzip  
+`-v` : Displays Verbose Information (print what is happening to the screen)  
+`-f` : creates archive with given filename
+
+
+`tar xzvf [compressed file]` is standard way to uncompress  
+
+To compress a folder use similar command:   
+`tar czvf [<file_name>.tar.gz] [file or folder]`
+
+
+![](figures/sars-4.png)
+
+You should see the `barcode01` folder now.
+
+### Use the `tar` command to uncompress the other two barcode file
+ After, you will have the following three barcode folders:
+ ![](figures/sars-5.png)
 
 ### We are now ready to use quast to compare the assemblies
 
