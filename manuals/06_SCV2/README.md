@@ -47,6 +47,7 @@ mamba update mamba
 ```
 We will follow the directions to install ARTIC from here:
 ```bash
+cd SARS_CoV-2
 cd artic-ncov2019
 
 ## This step will take a few minutes:

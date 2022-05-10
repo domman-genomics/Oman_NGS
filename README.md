@@ -37,9 +37,10 @@ This course will provide training in laboratory and bioinformatics protocols for
 - Week 10 : Bacterial Genome Assembly and Annotation (Domman)
   - [Online Manual](manuals/05_assembly/README.md)
 - Week 11 : Comparison of Sequencing Technologies for Pathogen Sequencing (Dinwiddie)
+  - [Lecture Slides](lectures/11_Illumina_Troubleshooting.pdf)
 - Week 12 : SARS-CoV-2 pipeline (Domman)
-- [Lecture Slides](lectures/12_SARS-CoV-2.pdf)
-- [Online Manual](manuals/06_SCV2/README.md)
+  - [Lecture Slides](lectures/12_SARS-CoV-2.pdf)
+  - [Online Manual](manuals/06_SCV2/README.md)
 - Week 13 : NGS troubleshooting, common mistakes & solutions (Dinwiddie)
 - Week 14 : Data dissemination to public/private data repositories (Domman)
 
