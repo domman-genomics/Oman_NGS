@@ -41,7 +41,8 @@ This course will provide training in laboratory and bioinformatics protocols for
 - Week 12 : SARS-CoV-2 pipeline (Domman)
   - [Lecture Slides](lectures/12_SARS-CoV-2.pdf)
   - [Online Manual](manuals/06_SCV2/README.md)
-- Week 13 : NGS troubleshooting, common mistakes & solutions (Dinwiddie)
+- Week 13 : Nanopore troubleshooting, common mistakes & solutions (Dinwiddie)
+  - [Lecture Slides](lectures/13_ONT_Troubleshooting.pdf)
 - Week 14 : Data dissemination to public/private data repositories (Domman)
 
 ## Bioinformatics Course Manual
