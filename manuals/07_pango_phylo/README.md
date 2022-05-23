@@ -3,12 +3,12 @@
 1. [Introduction & Aims](#introduction)
 2. [Running Pangolin](#exercise1)
 3. [Running NextClade](#exercise2)
-4. [Running ARTIC pipeline](#exercise3)
-5. [Looking at reads with IGV](#exercise4)
+4. [Alignment with mafft](#exercise3)
+5. [Phylogeny with IQ-Tree](#exercise4)
 
 ## 1. Introduction <a name="introduction"></a>
 
-In this module, we are going to work through how to generate SARS-CoV-2 consensus genomes from Oxford Nanopore data. The most popular pipeline for this is called ARTIC.
+In this module, we are continuing our SARS-CoV-2 module from last week. This week we will assign Pangolin and NextClade lineages to our sequences. We will also then merge our data with a subset of globally sampled genomes, align these sequences using `mafft` and then create a phylogeny so that we can identify relationships between isolates. 
 
 
 #### Navigate to our SARS_CoV-2 folder:
@@ -178,7 +178,7 @@ But here are a few important ones:
 | insertions                                      | List of detected inserted nucleotide fragments                                                             |
 
 
-## 3. Align sequences using `mafft`
+## 3. Align sequences using `mafft`<a name="exercise3"></a>
 The next step is to place our sequences within context of other globally representative strains. But before we can create a phylogeny, we have to ensure our sequences are aligned. We will be using the `mafft` aligner for this.
 
 We will also download a tool that allows you to visualize our sequence and alignment data.
@@ -204,3 +204,48 @@ mafft --thread 4 combined_seqs.fasta > combined_seqs_ALN.fasta
 ```
 `mafft [options] in_file > out_file`  
 `--thread` : number of CPUs to use (we have 4 on the VM)
+
+We can look at the alignment using `jalview`:
+```bash
+jalview -open combined_seqs_ALN.fasta
+```
+
+## 4. Phylogeny using IQ-Tree<a name="exercise4"></a>
+There are many different programs used for creating phylogenies:
+1. RAxML
+2. IQ-Tree
+3. PhyML
+5. FastTree
+6. BEAST
+7. PhyloBayes
+
+Today we will use a widely popular one called IQ-Tree.
+You can find more information about the programs and it's many options here:
+<http://www.iqtree.org>
+
+First we need to install `iqtree`:
+```bash
+mamba install -c conda-forge -c bioconda iqtree
+```
+
+We can create a phylogeny using this command:
+```bash
+iqtree -s combined_seqs_ALN.fasta -m GTR -T AUTO -B 1000
+```
+`-s`: input sequence alignment  
+`-m` : model of evolution. The general time reversible model (GTR) is usually a good choice.  
+`-T` : number of CPUs. IQ-Tree can auto find the optimal number with the AUTO  
+`-B`: number of rapid bootstraps to assess statistical confidence in branch support
+
+We need to install `figtree` to view the phylogeny.
+```bash
+mamba install -c conda-forge -c bioconda figtree
+```
+Once installed lauch `figree` to view out tree:
+```bash
+figtree combined_seqs_ALN.fasta.treefile
+```
+Click `OK` when the popup menu appears.
+
+We can then re-root the tree like so for better viewing by selecting Midpoint root in the left hand menu:
+![](figures/fig_12.png)
