@@ -43,7 +43,8 @@ This course will provide training in laboratory and bioinformatics protocols for
   - [Online Manual](manuals/06_SCV2/README.md)
 - Week 13 : Nanopore troubleshooting, common mistakes & solutions (Dinwiddie)
   - [Lecture Slides](lectures/13_ONT_Troubleshooting.pdf)
-- Week 14 : Data dissemination to public/private data repositories (Domman)
+- Week 14 : SARS-CoV-2 lineage calling and phylogeny (Domman)
+  - [Online Manual](manuals/07_pango_phylo/README.md)
 
 ## Bioinformatics Course Manual
 **Virtual Machine Setup Guide**
