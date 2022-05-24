@@ -55,7 +55,7 @@ Pangolin has become the default tool for assigning lineages for SARS-CoV-2. You 
 
 ```bash
 mamba create --name pango
-mamba activate pango
+conda activate pango
 mamba install -c conda-forge -c bioconda -c defaults pangolin
 ```
 
