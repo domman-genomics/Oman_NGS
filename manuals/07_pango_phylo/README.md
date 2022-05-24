@@ -197,6 +197,10 @@ Now we need to add our samples to this set. Let's use the `cat` command to merge
 ```bash
 cat all.consensus.fasta sequences.fasta > combined_seqs.fasta
 ```
+Use `grep` to count how many sequences we have total in the alignment now:
+```bash
+grep -c '>' combined_seqs.fasta
+```
 
 Now we align the sequences with `mafft` like so:
 ```bash
@@ -242,7 +246,9 @@ iqtree -s combined_seqs_ALN.fasta -m GTR -T AUTO -B 1000
 
 There are several outputs from iqtree:  
 `.iqtree` : the main report file that is self-readable. You should look at this file to see the computational results.   
-`.treefile` : the ML tree in NEWICK format, which can be visualized by FigTree or iTOL
+`.treefile` : the ML tree in NEWICK format, which can be visualized by FigTree or iTOL  
+`.log`: log file of the entire run
+
 We need to install `figtree` to view the phylogeny.
 ```bash
 mamba install -c conda-forge -c bioconda figtree
