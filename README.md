@@ -44,6 +44,7 @@ This course will provide training in laboratory and bioinformatics protocols for
 - Week 13 : Nanopore troubleshooting, common mistakes & solutions (Dinwiddie)
   - [Lecture Slides](lectures/13_ONT_Troubleshooting.pdf)
 - Week 14 : SARS-CoV-2 lineage calling and phylogeny (Domman)
+  - [Lecture Slides](lectures/14_Pango_Phylo.pdf)   
   - [Online Manual](manuals/07_pango_phylo/README.md)
 
 ## Bioinformatics Course Manual
