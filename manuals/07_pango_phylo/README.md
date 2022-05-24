@@ -8,7 +8,7 @@
 
 ## 1. Introduction <a name="introduction"></a>
 
-In this module, we are continuing our SARS-CoV-2 module from last week. This week we will assign Pangolin and NextClade lineages to our sequences. We will also then merge our data with a subset of globally sampled genomes, align these sequences using `mafft` and then create a phylogeny so that we can identify relationships between isolates. 
+In this module, we are continuing our SARS-CoV-2 module from last week. This week we will assign Pangolin and NextClade lineages to our sequences. We will also then merge our data with a subset of globally sampled genomes, align these sequences using `mafft` and then create a phylogeny so that we can identify relationships between isolates.
 
 
 #### Navigate to our SARS_CoV-2 folder:
@@ -209,6 +209,9 @@ We can look at the alignment using `jalview`:
 ```bash
 jalview -open combined_seqs_ALN.fasta
 ```
+![](figures/fig_13.png)
+
+I find that turning on the color option to "Nucleotide" makes the alignment much easier to view.
 
 ## 4. Phylogeny using IQ-Tree<a name="exercise4"></a>
 There are many different programs used for creating phylogenies:
@@ -234,9 +237,12 @@ iqtree -s combined_seqs_ALN.fasta -m GTR -T AUTO -B 1000
 ```
 `-s`: input sequence alignment  
 `-m` : model of evolution. The general time reversible model (GTR) is usually a good choice.  
-`-T` : number of CPUs. IQ-Tree can auto find the optimal number with the AUTO  
+`-T` : number of CPUs. IQ-Tree can auto find the optimal number with AUTO  
 `-B`: number of rapid bootstraps to assess statistical confidence in branch support
 
+There are several outputs from iqtree:  
+`.iqtree` : the main report file that is self-readable. You should look at this file to see the computational results.   
+`.treefile` : the ML tree in NEWICK format, which can be visualized by FigTree or iTOL
 We need to install `figtree` to view the phylogeny.
 ```bash
 mamba install -c conda-forge -c bioconda figtree
